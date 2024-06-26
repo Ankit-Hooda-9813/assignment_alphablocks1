@@ -6,7 +6,7 @@ from .models import User, Event, Booking, Waitlist
 import json
 
 @csrf_exempt
-def book_seats(request, eventId):
+def book_seats(request, eventId=1):
     if request.method == 'POST':
         data = json.loads(request.body)
         user = get_object_or_404(User, id=data['userId'])
